@@ -2,7 +2,6 @@ import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 import question10.UserDetailsThroughRowMapper;
 import question11.GetUserThroughSpringORM;
-import question12.UserDao1;
 import question12.UserDao3;
 import question4.UserAccessThroughSingleConnectionDatasource;
 import question5.UserAccessThroughJdbcTemplate;
@@ -19,7 +18,6 @@ import java.util.Date;
 public class Main {
     public static void main(String[] args) throws SQLException {
         /*Question 3*/
-/*
         ApplicationContext applicationContext = new ClassPathXmlApplicationContext("spring-config.xml");
         UserDAO userDAO = applicationContext.getBean(UserDAO.class);
         userDAO.printUserInfo();
@@ -48,11 +46,10 @@ public class Main {
         System.out.println("Name is :" + str);
 
 
-
         //Question 7
-       ApplicationContext applicationContext4=new ClassPathXmlApplicationContext("spring-config.xml");
-        InsertUsingJdbcTemplate insertUsingJdbcTemplate=applicationContext4.getBean(InsertUsingJdbcTemplate.class);
-        user user=new user();
+        ApplicationContext applicationContext4 = new ClassPathXmlApplicationContext("spring-config.xml");
+        InsertUsingJdbcTemplate insertUsingJdbcTemplate = applicationContext4.getBean(InsertUsingJdbcTemplate.class);
+        user user = new user();
         user.setUsername("vineet");
         user.setPassword("vineet");
         user.setName("Vineet");
@@ -67,23 +64,22 @@ public class Main {
         queryForMap.userDetails();
 
         //Question 9
-        ApplicationContext applicationContext6=new ClassPathXmlApplicationContext("spring-config.xml");
-        QueryForList queryForList=applicationContext6.getBean(QueryForList.class);
+        ApplicationContext applicationContext6 = new ClassPathXmlApplicationContext("spring-config.xml");
+        QueryForList queryForList = applicationContext6.getBean(QueryForList.class);
         queryForList.userDetailsThroughQueryForList();
 
         //Question 10
-        ApplicationContext applicationContext7=new ClassPathXmlApplicationContext("spring-config.xml");
-        UserDetailsThroughRowMapper userDetailsThroughRowMapper=applicationContext7.getBean(UserDetailsThroughRowMapper.class);
-        user=userDetailsThroughRowMapper.getUserDetails();
+        ApplicationContext applicationContext7 = new ClassPathXmlApplicationContext("spring-config.xml");
+        UserDetailsThroughRowMapper userDetailsThroughRowMapper = applicationContext7.getBean(UserDetailsThroughRowMapper.class);
+        user = userDetailsThroughRowMapper.getUserDetails();
         System.out.println(user);
-        */
 
         //Question 11
-        /*ApplicationContext applicationContext8=new ClassPathXmlApplicationContext("spring-config.xml");
-        GetUserThroughSpringORM getUserThroughSpringORM=applicationContext8.getBean(GetUserThroughSpringORM.class);
-        getUserThroughSpringORM.getUserDetailsThroughORM();*/
-        ApplicationContext applicationContext9=new ClassPathXmlApplicationContext("spring-config.xml");
-        UserDao3 userDao3=applicationContext9.getBean(UserDao3.class);
+        ApplicationContext applicationContext8 = new ClassPathXmlApplicationContext("spring-config.xml");
+        GetUserThroughSpringORM getUserThroughSpringORM = applicationContext8.getBean(GetUserThroughSpringORM.class);
+        getUserThroughSpringORM.getUserDetailsThroughORM();
+        ApplicationContext applicationContext9 = new ClassPathXmlApplicationContext("spring-config.xml");
+        UserDao3 userDao3 = applicationContext9.getBean(UserDao3.class);
         userDao3.insertUserDao3();
     }
 }
